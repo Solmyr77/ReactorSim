@@ -50,8 +50,13 @@ export default {
       if (this.isOn && !this.fail) {
         this.temperature++;
         if (this.temperature >= 40) {
-          this.generatedPower = this.generatePower();
-          this.generatedPowerSum += Number(this.generatedPower);
+          if (this.isCoolingOn) {
+            this.generatedPower = "0";
+          }
+          else {
+            this.generatedPower = this.generatePower();
+            this.generatedPowerSum += Number(this.generatedPower);
+          }
         }
 
         if (this.temperature < 40 && !this.isCoolingOn) {
