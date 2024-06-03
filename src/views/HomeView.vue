@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     const coolingTickTime = 150;
-    const heatTickTime = 100;
+    const heatTickTime = 1000;
     const idleTickTime = 3000;
 
     this.coolingCounter = setInterval(() => {
@@ -76,7 +76,9 @@ export default {
     }, idleTickTime);
 
     this.elapsedCounter = setInterval(() => {
-      this.elapsedTime += 1;
+      if (!this.fail) {
+        this.elapsedTime += 1;
+      }
     }, 1000);
   },
   beforeUnmount() {
