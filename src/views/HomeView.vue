@@ -181,7 +181,7 @@ export default {
   <div class="flex justify-between flex-col bg-ui-background h-1 w-screen min-h-screen relative">
 
     <!--Popup-->
-    <div v-if="showPopup" class="flex justify-center items-center fixed top-3/4 z-20 bg-ui-card ring-gray-300 ring-1 px-12 py-6 rounded-xl animate-messagePing ">
+    <div v-if="showPopup" class="flex justify-center items-center fixed top-3/4 left-1/4 z-20 bg-ui-card ring-gray-300 ring-1 px-12 py-6 rounded-xl animate-messagePing ">
       <h1 class="dm-sans-semibold text-red-600">{{ popupText }}</h1>
     </div>
     <!--Popup-->
@@ -193,7 +193,7 @@ export default {
 
       <div class="grid grid-cols-1 grid-rows-8 basis-1/3 w-full min-h-full p-4 gap-4">
 
-        <div @click="handleIsOn" :class="{ 'ring-ui-primary ring-2': isOn, 'ring-ui-ring ring-2': !isOn }"
+        <div @click="handleIsOn" :class="{ 'ring-ui-primary ring-2': isOn, 'ring-ui-ring ring-2': !isOn, 'pointer-events-none' : fail  }"
           class="flex justify-center items-center w-full h-full bg-ui-card rounded-xl p-4 cursor-pointer">
           <div class="flex flex-col justify-center items-start w-full h-full pointer-events-none select-none">
             <div class="flex justify-between items-center basis-1/3 w-full">
@@ -230,7 +230,7 @@ export default {
       : "0 GW" }}</span></h2>
         </div>
 
-        <div @click="handleCooling" :class="{ 'ring-ui-primary ring-2': isCoolingOn, 'ring-ui-ring ring-2': !isCoolingOn }"
+        <div @click="handleCooling" :class="{ 'ring-ui-primary ring-2': isCoolingOn, 'ring-ui-ring ring-2': !isCoolingOn, 'pointer-events-none' : fail }"
           class="flex justify-center items-center w-full h-full bg-ui-card rounded-xl p-4 cursor-pointer">
           <div class="flex flex-col justify-center items-start w-full h-full pointer-events-none select-none">
             <div class="flex justify-between items-center basis-1/3 w-full">
